@@ -11,11 +11,6 @@ def shift_image(src_image,dst_image,direction,color,transparency=100):
     '''
     dx=[]
     dy=[]
-    # for i in range(src_image.shape[0]):
-    #     for j in range(src_image.shape[1]):
-    #         if (src_image[i,j]==np.array(color)).all():
-    #             dx.append(i)
-    #             dy.append(j)
     dxy=np.argwhere((src_image==color).all(axis=2))
     dx=dxy[:,0]
     dy=dxy[:,1]
@@ -34,6 +29,7 @@ def image_proc(original_img_data):
 
     shift_image(imagedata,imagedata2,[8,9],[255,0,0])
     shift_image(imagedata,imagedata2,[20,0],[0,0,255])
+    shift_image(imagedata,imagedata2,[0,0],[255,255,0])
 
     new_img=Image.fromarray(np.uint8(imagedata2))
 
@@ -56,7 +52,7 @@ def read_html():
     soup = BeautifulSoup(html_doc, 'html.parser')
     imgtext_list=soup.find_all('img')[:-1]
     for index,imgtext in enumerate(imgtext_list):
-        print('Processing Page {:d}/{:d}...'.format(index,len(imgtext_list)))
+        print('Processing Page {:d}/{:d}...'.format(index+1,len(imgtext_list)))
         original_img_data=imgtext['src']
         original_img_data=original_img_data.replace('data:image/png;base64,','')
         new_img_data=image_proc(original_img_data)
