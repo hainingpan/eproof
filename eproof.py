@@ -21,6 +21,7 @@ def shift_image(src_image,dst_image,direction,color,transparency=100):
     mat_final=mat_upward.sum(axis=0)+mat_downward.sum(axis=0)+mat
     dx2,dy2=np.nonzero(mat_final)
     dst_image[dx2,dy2]=np.array(color+[transparency])
+    dst_image[dx,dy]=np.array(color+[255])
 
 def image_proc(original_img_data):
     im = Image.open(BytesIO(base64.b64decode(original_img_data)))
