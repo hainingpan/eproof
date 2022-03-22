@@ -3,11 +3,11 @@ This repository is meant to help eProof when the manuscript is under the product
 
 Therefore, this snippet can help eProof a bit easier by (1) converting the thin strikethroughs into background colors; (2) adding a colored block before each line whenever there is a change in that line (red indicates deletions, blue indicates addition). (See below) 
 
-<img src="Original.png" width=300 align=left>
+<img src="original.png" width=300 align=left>
 
 Therefore, the authors can be aware of the changes more easily, which may be further helpful, for example, in updating the arXiv version of the manuscript.
 
-<img src="Converted.png" width=300 align=left>
+<img src="converted.png" width=300 align=left>
 
 
 # Method
