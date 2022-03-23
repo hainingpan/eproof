@@ -28,4 +28,4 @@ After that, the authors should catch the changes more easily, which may be furth
  
 # Note
 * The template is the APS journals such as [Physical Reviews Letters](https://journals.aps.org/elecproofs.html).
-* Token (`self.api_key`) can be modified at [https://cloudconvert.com/dashboard/api/v2/keys](https://cloudconvert.com/dashboard/api/v2/keys)
+* Token (`self.api_key`) can be modified at [https://cloudconvert.com/dashboard/api/v2/keys](https://cloudconvert.com/dashboard/api/v2/keys) and [https://cloudconvert.com/api/v2#authentication](https://cloudconvert.com/api/v2#authentication)
