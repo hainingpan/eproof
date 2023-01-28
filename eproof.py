@@ -76,11 +76,13 @@ class Convert:
         html_doc=self.downloads.content.decode('utf-8')
         colors=re.findall(r'\.fc[\d]\{.*\}',html_doc)
         for color in colors:
-            cc=re.findall('color:rgb\((.*?)\);',color)[0]
-            if '0,0,0' in cc:
-                new_color=add_background(color,'white')
-            else:
-                new_color=add_background(color,r'rgb({},{})'.format(cc,self.alpha))
+            cc=re.findall('color:rgb\((.*?)\);',color)
+            if len(cc)>0:
+                cc=cc[0]
+                if '0,0,0' in cc:
+                    new_color=add_background(color,'white')
+                else:
+                    new_color=add_background(color,r'rgb({},{})'.format(cc,self.alpha))
             html_doc=html_doc.replace(color, new_color)
         with open('{}.html'.format(self.file),'w',encoding='utf-8') as f:
             f.write(html_doc)
