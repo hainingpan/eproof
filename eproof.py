@@ -83,7 +83,7 @@ class Convert:
                     new_color=add_background(color,'white')
                 else:
                     new_color=add_background(color,r'rgb({},{})'.format(cc,self.alpha))
-            html_doc=html_doc.replace(color, new_color)
+                html_doc=html_doc.replace(color, new_color)
         with open('{}.html'.format(self.file),'w',encoding='utf-8') as f:
             f.write(html_doc)
 
